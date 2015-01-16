@@ -11,15 +11,19 @@
 #import "Constants.h"
 #import "FLUtility.h"
 #import "SVProgressHUD.h"
+#import "FLImage.h"
 
 @implementation FLFlickerImageFetchApi
 
 #define JSON_FLICKR_FEED @"jsonFlickrFeed"
 
-- (void) getFlickerImagesWithServiceSuccessBlock:(flickerImageFetchWevServicetSuccessBlock)successBlock andFailureBlock:(flickerImageFetchWevServiceFailureBlock)failureBlock andCachePolicy:(NSURLRequestCachePolicy) requestCachePolicy {
+- (void) getFlickerImagesWithTag:(NSString *)tags andServiceSuccessBlock:(flickerImageFetchWevServicetSuccessBlock)successBlock andFailureBlock:(flickerImageFetchWevServiceFailureBlock)failureBlock andCachePolicy:(NSURLRequestCachePolicy) requestCachePolicy {
 	
-	webserviceMethod = [NSString stringWithFormat:@"%@%@",FLICKER_PUBLIC_IMAGE_FETCH_METHOD,FLICKER_JSON_RESPONSE_FORMAT];
+	webserviceMethod = [NSString stringWithFormat:@"%@%@%@",FLICKER_PUBLIC_IMAGE_FETCH_METHOD,FLICKER_API_PARAMETER_FORMAT,FLICKER_RESPNOSE_FORMAT_JSON];
 	
+	if (tags && tags.length > 0) {
+		webserviceMethod = [webserviceMethod stringByAppendingString:[NSString stringWithFormat:@"&%@%@",FLICKER_API_PARAMETER_TAGS,tags]];
+	}
     requestMethod = HTTPGET;
     cachePolicy = requestCachePolicy;
 	
@@ -33,15 +37,13 @@
 		if (!error) {
 			
 			NSArray *imageArray = [self getImageURLArrayFromResponseDictionary:parsedObject];
-			if (imageArray.count > 0) {
-				successBlock([imageArray mutableCopy]);
-				imageArray = nil;
-				return;
-			}
-			failureBlock([FLUtility getFlickerDataCorruptedError]);
+			successBlock([imageArray mutableCopy]);
+			return;
 		} else {
+			
 			// retry if correpted data
-			[self getFlickerImagesWithServiceSuccessBlock:successBlock andFailureBlock:failureBlock andCachePolicy:cachePolicy];
+			[self cancelAllRequests];
+			[self getFlickerImagesWithTag:tags andServiceSuccessBlock:successBlock andFailureBlock:failureBlock andCachePolicy:cachePolicy];
 			[SVProgressHUD showWithStatus:NSLocalizedString(@"Retrying...", nil)];
 		}
 
@@ -70,8 +72,11 @@
 			if (isDictionary(item)) {
 				NSDictionary *media = [item valueForKey:MEDIA];
 				if (isDictionary(media)) {
+					
 					NSString *imageString = [media valueForKey:M];
-					[imageArray addObject:imageString];
+					FLImage *image = [[FLImage alloc]init];
+					image.url = [NSURL URLWithString:imageString];
+					[imageArray addObject:image];
 				}
 			}
 		}
@@ -79,4 +84,5 @@
 	return imageArray;
 	
 }
+
 @end

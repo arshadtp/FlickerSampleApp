@@ -45,6 +45,11 @@
                                      failure:failureBlock];
     
 	[[AFHTTPRequestOperationManager manager].operationQueue addOperation:operation];
+}
+
+- (void) cancelAllRequests {
+	
+	[[AFHTTPRequestOperationManager manager].operationQueue cancelAllOperations];
 
 }
 

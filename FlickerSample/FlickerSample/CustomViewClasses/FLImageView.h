@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FLImage.h"
+
 typedef void(^loadImageSuccessBlock)(UIImage *image, NSError *error);
 
 @interface FLImageView : UIImageView
 
-@property (nonatomic, strong) NSURL *imageURL;
-
++ (void) cancellAllImageDownLoads; 
 /**
  *  method to load image from url
  *
@@ -21,7 +22,7 @@ typedef void(^loadImageSuccessBlock)(UIImage *image, NSError *error);
  *  @param url URL of the image which is to be loaded
  */
 
-- (void)loadImageForUrl:(NSURL *)url;
+- (void)loadImage:(FLImage *)image withPlaceholderImage:(UIImage *)image;
 /**
  *  method to load image from url with a callback method
  *
@@ -30,16 +31,6 @@ typedef void(^loadImageSuccessBlock)(UIImage *image, NSError *error);
  *  @param successBlock success call back method
  */
 
-- (void)loadImageForUrl:(NSURL *)url withSuccessBlock:(loadImageSuccessBlock) successBlock;
+- (void)loadImage:(FLImage *)image withPlaceholderImage:(UIImage *)image andWithSuccessBlock:(loadImageSuccessBlock) successBlock;
 
-/**
- *  Method returns TRUE/FALSE depending upon the URL
- *
- *  Returns TRUE if image URL are equal
- *  @param firstImageView  image view of type FLImageView
- *  @param secondImageView image view of type FLImageView
- *
- *  @return TRUE/FALSE
- */
-+(BOOL) compareImageView:(FLImageView *) firstImageView and:(FLImageView *) secondImageView;
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		532CD2031A68EDD40019BBC8 /* FLHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 532CD2021A68EDD40019BBC8 /* FLHomeCollectionViewCell.m */; };
+		532CD2071A6916C90019BBC8 /* FLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 532CD2061A6916C90019BBC8 /* FLImage.m */; };
 		537A9D1E1A67C04F0090A13A /* FLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 537A9D141A67C04F0090A13A /* FLImageView.m */; };
 		537A9D1F1A67C04F0090A13A /* FLUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 537A9D181A67C04F0090A13A /* FLUtility.m */; };
 		537A9D201A67C04F0090A13A /* FLBaseWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 537A9D1B1A67C04F0090A13A /* FLBaseWebService.m */; };
@@ -33,6 +35,10 @@
 
 /* Begin PBXFileReference section */
 		0A1BD559F70D38E7612C44C1 /* libPods-FlickerSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlickerSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		532CD2011A68EDD40019BBC8 /* FLHomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLHomeCollectionViewCell.h; sourceTree = "<group>"; };
+		532CD2021A68EDD40019BBC8 /* FLHomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLHomeCollectionViewCell.m; sourceTree = "<group>"; };
+		532CD2051A6916C90019BBC8 /* FLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLImage.h; sourceTree = "<group>"; };
+		532CD2061A6916C90019BBC8 /* FLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLImage.m; sourceTree = "<group>"; };
 		537A9D131A67C04F0090A13A /* FLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FLImageView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		537A9D141A67C04F0090A13A /* FLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FLImageView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		537A9D161A67C04F0090A13A /* FLMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FLMacros.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -79,6 +85,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		532CD2001A68EDA50019BBC8 /* FLHomeCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				532CD2011A68EDD40019BBC8 /* FLHomeCollectionViewCell.h */,
+				532CD2021A68EDD40019BBC8 /* FLHomeCollectionViewCell.m */,
+			);
+			path = FLHomeCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		532CD2041A6916B40019BBC8 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				532CD2051A6916C90019BBC8 /* FLImage.h */,
+				532CD2061A6916C90019BBC8 /* FLImage.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		532CD2081A691D860019BBC8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		532CD2091A6978980019BBC8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				53BAE24E1A67745300D91426 /* FLHomeViewController.h */,
+				53BAE24F1A67745300D91426 /* FLHomeViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		537A9D121A67C04F0090A13A /* CustomViewClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,13 +172,15 @@
 		53BAE2461A67745300D91426 /* FlickerSample */ = {
 			isa = PBXGroup;
 			children = (
+				532CD2091A6978980019BBC8 /* ViewControllers */,
+				532CD2081A691D860019BBC8 /* Categories */,
+				532CD2041A6916B40019BBC8 /* Others */,
+				532CD2001A68EDA50019BBC8 /* FLHomeCollectionViewCell */,
 				537A9D121A67C04F0090A13A /* CustomViewClasses */,
 				537A9D151A67C04F0090A13A /* FLUtility */,
 				537A9D191A67C04F0090A13A /* WebServiceClasses */,
 				53BAE24B1A67745300D91426 /* AppDelegate.h */,
 				53BAE24C1A67745300D91426 /* AppDelegate.m */,
-				53BAE24E1A67745300D91426 /* FLHomeViewController.h */,
-				53BAE24F1A67745300D91426 /* FLHomeViewController.m */,
 				53BAE2511A67745300D91426 /* Main.storyboard */,
 				53BAE2541A67745300D91426 /* Images.xcassets */,
 				53BAE2561A67745300D91426 /* LaunchScreen.xib */,
@@ -334,6 +376,8 @@
 				53BAE24D1A67745300D91426 /* AppDelegate.m in Sources */,
 				537A9D201A67C04F0090A13A /* FLBaseWebService.m in Sources */,
 				53BAE24A1A67745300D91426 /* main.m in Sources */,
+				532CD2031A68EDD40019BBC8 /* FLHomeCollectionViewCell.m in Sources */,
+				532CD2071A6916C90019BBC8 /* FLImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

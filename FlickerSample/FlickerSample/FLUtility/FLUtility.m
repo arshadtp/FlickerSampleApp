@@ -15,6 +15,9 @@
 	
 	NSString *trimedResponseString =[responseString stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:JSON_FLICKR_FEED]];
 	
+	// Flickr API identify ' incorrectly an escape charecter so removing that
+	trimedResponseString = [trimedResponseString stringByReplacingOccurrencesOfString:@"'" withString:@"/"];
+
 	if (trimedResponseString.length >2) {
 		NSString *trimedString =[trimedResponseString substringWithRange:NSMakeRange(1, [trimedResponseString length]-2)];
 		return trimedString;
@@ -26,4 +29,5 @@
 	
 	return [NSError errorWithDomain:@"Corrupted Data" code:333 userInfo:@{NSLocalizedDescriptionKey:@"Response data is not in correct format"}];
 }
+
 @end

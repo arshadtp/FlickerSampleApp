@@ -28,4 +28,5 @@ typedef void (^baseWebseriveFailureBlock)(AFHTTPRequestOperation *operation, NSE
 - (void)makeRequestWithWebserviceSuccessBlock:(baseWebserviceSuccessBlock)successBlock
                               andFailureBlock:(baseWebseriveFailureBlock)failureBlock;
 
+- (void) cancelAllRequests;
 @end

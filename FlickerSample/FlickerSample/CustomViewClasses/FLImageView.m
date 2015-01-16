@@ -20,38 +20,35 @@
     return self;
 }
 
-- (void)loadImageForUrl:(NSURL *)url {
+- (void)loadImage:(FLImage *)image withPlaceholderImage:(UIImage *)placeHolderImage {
 	
-	self.imageURL = url;
-    [[FSImageLoader sharedInstance] loadImageForURL:url image:^(UIImage *image, NSError *error) {
+	[self setImage:placeHolderImage];
+    [[FSImageLoader sharedInstance] loadImageForURL:image.url image:^(UIImage *loadedImage, NSError *error) {
 		
-        if (image) {
-			
-            [self setImage:image];
+        if (loadedImage) {
+			image.image = loadedImage;
+            [self setImage:image.image];
         }
     }];
 }
 
-- (void)loadImageForUrl:(NSURL *)url withSuccessBlock:(loadImageSuccessBlock) successBlock {
+- (void)loadImage:(FLImage *)image withPlaceholderImage:(UIImage *)placeHolderImage andWithSuccessBlock:(loadImageSuccessBlock) successBlock {
 	
-	self.imageURL = url;
-	[[FSImageLoader sharedInstance] loadImageForURL:url image:^(UIImage *image, NSError *error) {
+	[[FSImageLoader sharedInstance] loadImageForURL:image.url image:^(UIImage *loadedImage, NSError *error) {
 		
-		if (image) {
+		if (loadedImage) {
 			
-			[self setImage:image];
+			image.image = loadedImage;
+			[self setImage:image.image];
 		}
 		successBlock(image, error);
     }];
 	
 }
 
-+(BOOL) compareImageView:(FLImageView *) firstImageView and:(FLImageView *) secondImageView {
-	
-	if ([firstImageView.imageURL isEqual:secondImageView.imageURL]) {
-		return YES;
-	}
-	return NO;
-}
 
++ (void) cancellAllImageDownLoads {
+	
+	[[FSImageLoader sharedInstance] cancelAllRequests];
+}
 @end

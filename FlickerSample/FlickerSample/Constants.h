@@ -21,5 +21,9 @@ static int const DEFAULT_TIMER_EXPIRATION_TIME = 15; // in secs
 
 #define FLICKER_PUBLIC_IMAGE_FETCH_METHOD @"feeds/photos_public.gne?"
 
-#define FLICKER_JSON_RESPONSE_FORMAT @"format=json"
+#define FLICKER_API_PARAMETER_FORMAT @"format="
+#define FLICKER_API_PARAMETER_TAGS @"tags="
+
+#define FLICKER_RESPNOSE_FORMAT_JSON @"json"
+#define DEFAULT_ALERT_TITLE @"Flickr"
 #endif

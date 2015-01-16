@@ -92,6 +92,12 @@
         NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:aURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:_timeoutInterval];
         AFHTTPRequestOperation *imageRequestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
         imageRequestOperation.responseSerializer = [AFImageResponseSerializer serializer];
+		
+		// allow self signed ssl access
+		AFSecurityPolicy *security = [[AFSecurityPolicy alloc] init];
+		[security setAllowInvalidCertificates:YES];
+		imageRequestOperation.securityPolicy=security;
+
         [runningRequests addObject:imageRequestOperation];
         __weak AFHTTPRequestOperation *imageRequestOperationForBlock = imageRequestOperation;
 

@@ -21,6 +21,6 @@ typedef void (^flickerImageFetchWevServiceFailureBlock)(NSError *error);
  *  @param failureBlock failure call back block
  *  @param cachePolicy  request cache policy
  */
-- (void) getFlickerImagesWithServiceSuccessBlock:(flickerImageFetchWevServicetSuccessBlock)successBlock andFailureBlock:(flickerImageFetchWevServiceFailureBlock)failureBlock andCachePolicy:(NSURLRequestCachePolicy) cachePolicy;
+- (void) getFlickerImagesWithTag:(NSString *)tags andServiceSuccessBlock:(flickerImageFetchWevServicetSuccessBlock)successBlock andFailureBlock:(flickerImageFetchWevServiceFailureBlock)failureBlock andCachePolicy:(NSURLRequestCachePolicy) cachePolicy;
 
 @end
