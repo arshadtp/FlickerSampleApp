@@ -49,7 +49,7 @@
 		537A9D1C1A67C04F0090A13A /* FLFlickerImageFetchApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FLFlickerImageFetchApi.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		537A9D1D1A67C04F0090A13A /* FLFlickerImageFetchApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FLFlickerImageFetchApi.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		537A9D221A67C2E50090A13A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Constants.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		53BAE2441A67745300D91426 /* FlickerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BAE2441A67745300D91426 /* FlickrSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53BAE2481A67745300D91426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53BAE2491A67745300D91426 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		53BAE24B1A67745300D91426 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		53BAE2521A67745300D91426 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53BAE2541A67745300D91426 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		53BAE2571A67745300D91426 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		53BAE25D1A67745400D91426 /* FlickerSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickerSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BAE25D1A67745400D91426 /* FlickrSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53BAE2621A67745400D91426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53BAE2631A67745400D91426 /* FlickerSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickerSampleTests.m; sourceTree = "<group>"; };
 		DE35204960BA48DFF8762FEA /* Pods-FlickerSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerSample/Pods-FlickerSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 		53BAE2451A67745300D91426 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				53BAE2441A67745300D91426 /* FlickerSample.app */,
-				53BAE25D1A67745400D91426 /* FlickerSampleTests.xctest */,
+				53BAE2441A67745300D91426 /* FlickrSample.app */,
+				53BAE25D1A67745400D91426 /* FlickrSampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,9 +236,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		53BAE2431A67745200D91426 /* FlickerSample */ = {
+		53BAE2431A67745200D91426 /* FlickrSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53BAE2671A67745400D91426 /* Build configuration list for PBXNativeTarget "FlickerSample" */;
+			buildConfigurationList = 53BAE2671A67745400D91426 /* Build configuration list for PBXNativeTarget "FlickrSample" */;
 			buildPhases = (
 				EBD28BDE051E4AAB212D039F /* Check Pods Manifest.lock */,
 				53BAE2401A67745200D91426 /* Sources */,
@@ -250,14 +250,14 @@
 			);
 			dependencies = (
 			);
-			name = FlickerSample;
+			name = FlickrSample;
 			productName = FlickerSample;
-			productReference = 53BAE2441A67745300D91426 /* FlickerSample.app */;
+			productReference = 53BAE2441A67745300D91426 /* FlickrSample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		53BAE25C1A67745400D91426 /* FlickerSampleTests */ = {
+		53BAE25C1A67745400D91426 /* FlickrSampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53BAE26A1A67745400D91426 /* Build configuration list for PBXNativeTarget "FlickerSampleTests" */;
+			buildConfigurationList = 53BAE26A1A67745400D91426 /* Build configuration list for PBXNativeTarget "FlickrSampleTests" */;
 			buildPhases = (
 				53BAE2591A67745400D91426 /* Sources */,
 				53BAE25A1A67745400D91426 /* Frameworks */,
@@ -268,9 +268,9 @@
 			dependencies = (
 				53BAE25F1A67745400D91426 /* PBXTargetDependency */,
 			);
-			name = FlickerSampleTests;
+			name = FlickrSampleTests;
 			productName = FlickerSampleTests;
-			productReference = 53BAE25D1A67745400D91426 /* FlickerSampleTests.xctest */;
+			productReference = 53BAE25D1A67745400D91426 /* FlickrSampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -292,7 +292,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 53BAE23F1A67745200D91426 /* Build configuration list for PBXProject "FlickerSample" */;
+			buildConfigurationList = 53BAE23F1A67745200D91426 /* Build configuration list for PBXProject "FlickrSample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -305,8 +305,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				53BAE2431A67745200D91426 /* FlickerSample */,
-				53BAE25C1A67745400D91426 /* FlickerSampleTests */,
+				53BAE2431A67745200D91426 /* FlickrSample */,
+				53BAE25C1A67745400D91426 /* FlickrSampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -394,7 +394,7 @@
 /* Begin PBXTargetDependency section */
 		53BAE25F1A67745400D91426 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 53BAE2431A67745200D91426 /* FlickerSample */;
+			target = 53BAE2431A67745200D91426 /* FlickrSample */;
 			targetProxy = 53BAE25E1A67745400D91426 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -502,7 +502,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FlickerSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FlickrSample;
 			};
 			name = Debug;
 		};
@@ -513,7 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FlickerSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FlickrSample;
 			};
 			name = Release;
 		};
@@ -531,7 +531,7 @@
 				);
 				INFOPLIST_FILE = FlickerSampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FlickrSampleTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlickerSample.app/FlickerSample";
 			};
 			name = Debug;
@@ -546,7 +546,7 @@
 				);
 				INFOPLIST_FILE = FlickerSampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FlickrSampleTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlickerSample.app/FlickerSample";
 			};
 			name = Release;
@@ -554,7 +554,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53BAE23F1A67745200D91426 /* Build configuration list for PBXProject "FlickerSample" */ = {
+		53BAE23F1A67745200D91426 /* Build configuration list for PBXProject "FlickrSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53BAE2651A67745400D91426 /* Debug */,
@@ -563,7 +563,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53BAE2671A67745400D91426 /* Build configuration list for PBXNativeTarget "FlickerSample" */ = {
+		53BAE2671A67745400D91426 /* Build configuration list for PBXNativeTarget "FlickrSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53BAE2681A67745400D91426 /* Debug */,
@@ -572,7 +572,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53BAE26A1A67745400D91426 /* Build configuration list for PBXNativeTarget "FlickerSampleTests" */ = {
+		53BAE26A1A67745400D91426 /* Build configuration list for PBXNativeTarget "FlickrSampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53BAE26B1A67745400D91426 /* Debug */,
