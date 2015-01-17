@@ -107,13 +107,6 @@
 			path = Others;
 			sourceTree = "<group>";
 		};
-		532CD2081A691D860019BBC8 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
 		532CD2091A6978980019BBC8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				532CD2091A6978980019BBC8 /* ViewControllers */,
-				532CD2081A691D860019BBC8 /* Categories */,
 				532CD2041A6916B40019BBC8 /* Others */,
 				532CD2001A68EDA50019BBC8 /* FLHomeCollectionViewCell */,
 				537A9D121A67C04F0090A13A /* CustomViewClasses */,
