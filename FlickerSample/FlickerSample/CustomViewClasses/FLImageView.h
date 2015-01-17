@@ -14,6 +14,9 @@ typedef void(^loadImageSuccessBlock)(UIImage *image, NSError *error);
 
 @interface FLImageView : UIImageView
 
+/**
+ *  Method to cancel all active image download requests
+ */
 + (void) cancellAllImageDownLoads; 
 /**
  *  method to load image from url

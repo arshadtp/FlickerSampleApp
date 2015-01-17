@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		532CD2031A68EDD40019BBC8 /* FLHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 532CD2021A68EDD40019BBC8 /* FLHomeCollectionViewCell.m */; };
 		532CD2071A6916C90019BBC8 /* FLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 532CD2061A6916C90019BBC8 /* FLImage.m */; };
+		532CD20B1A69FEAC0019BBC8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 532CD20A1A69FEAC0019BBC8 /* Localizable.strings */; };
+		536869E71A6A097200B57F80 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 536869E61A6A097200B57F80 /* Podfile */; };
 		537A9D1E1A67C04F0090A13A /* FLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 537A9D141A67C04F0090A13A /* FLImageView.m */; };
 		537A9D1F1A67C04F0090A13A /* FLUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 537A9D181A67C04F0090A13A /* FLUtility.m */; };
 		537A9D201A67C04F0090A13A /* FLBaseWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 537A9D1B1A67C04F0090A13A /* FLBaseWebService.m */; };
@@ -39,6 +41,8 @@
 		532CD2021A68EDD40019BBC8 /* FLHomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLHomeCollectionViewCell.m; sourceTree = "<group>"; };
 		532CD2051A6916C90019BBC8 /* FLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLImage.h; sourceTree = "<group>"; };
 		532CD2061A6916C90019BBC8 /* FLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLImage.m; sourceTree = "<group>"; };
+		532CD20A1A69FEAC0019BBC8 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		536869E61A6A097200B57F80 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		537A9D131A67C04F0090A13A /* FLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FLImageView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		537A9D141A67C04F0090A13A /* FLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FLImageView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		537A9D161A67C04F0090A13A /* FLMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FLMacros.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -152,6 +156,7 @@
 		53BAE23B1A67745200D91426 = {
 			isa = PBXGroup;
 			children = (
+				536869E61A6A097200B57F80 /* Podfile */,
 				53BAE2461A67745300D91426 /* FlickerSample */,
 				53BAE2601A67745400D91426 /* FlickerSampleTests */,
 				53BAE2451A67745300D91426 /* Products */,
@@ -195,6 +200,7 @@
 				537A9D221A67C2E50090A13A /* Constants.h */,
 				53BAE2481A67745300D91426 /* Info.plist */,
 				53BAE2491A67745300D91426 /* main.m */,
+				532CD20A1A69FEAC0019BBC8 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -316,8 +322,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				536869E71A6A097200B57F80 /* Podfile in Resources */,
 				53BAE2531A67745300D91426 /* Main.storyboard in Resources */,
 				53BAE2581A67745300D91426 /* LaunchScreen.xib in Resources */,
+				532CD20B1A69FEAC0019BBC8 /* Localizable.strings in Resources */,
 				53BAE2551A67745300D91426 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

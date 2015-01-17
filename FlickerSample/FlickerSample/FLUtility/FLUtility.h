@@ -7,9 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Constants.h"
+#import <UIKit/UIKit.h>
 
 @interface FLUtility : NSObject
 
+
+/**
+ *   functin will show an alert message with a title and a message.
+ 
+ *   @param title (NSString) - Title for the alert view.
+ *   @param message (NSString) - message to be shown in the alert body.
+ *   @param actions (NSArray) - Array of UIAlertAction objects.
+ *   @param controller (UIViewController) - viewController object which alertview need to be displayed.
+ 
+ *   @return void
+ 
+ */
++ (void)showAlertWithTitle:(NSString *)title
+				   message:(NSString *)message
+				   actions:(NSArray *)actions
+		  inViewController:(UIViewController *)controller;
 /**
  *  Method to trim unwanted charecters from the Flicker response to make it a valid JSON
  *

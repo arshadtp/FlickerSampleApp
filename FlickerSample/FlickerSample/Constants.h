@@ -9,10 +9,6 @@
 #ifndef FlickerSample_Constants_h
 #define FlickerSample_Constants_h
 
-static int const ZERO_HEIGHT = 0.0;
-static int const MIN_TIMER_INTERVAL = 1; // in secs
-static int const DEFAULT_TIMER_EXPIRATION_TIME = 15; // in secs
-
 
 #define JSON_FLICKR_FEED @"jsonFlickrFeed"
 
@@ -25,5 +21,11 @@ static int const DEFAULT_TIMER_EXPIRATION_TIME = 15; // in secs
 #define FLICKER_API_PARAMETER_TAGS @"tags="
 
 #define FLICKER_RESPNOSE_FORMAT_JSON @"json"
-#define DEFAULT_ALERT_TITLE @"Flickr"
+#define DEFAULT_ERROR_ALERT_TITLE @"Flickr Error"
+
+
+// Images
+
+#define PLACE_HOLDER_IMAGE @"PageControlNoImage"
+
 #endif

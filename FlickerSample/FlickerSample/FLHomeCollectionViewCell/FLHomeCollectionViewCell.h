@@ -12,4 +12,11 @@
 @interface FLHomeCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, weak) IBOutlet FLImageView *imageView;
+
+/**
+ *  Load data in to colection view cell
+ *
+ *  @param image FLImage obj which contains URL of teh image to be loaded
+ */
+- (void) loadData:(FLImage *) image;
 @end

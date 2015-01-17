@@ -15,8 +15,8 @@
 @property (nonatomic, strong) FLFlickerImageFetchApi *webservice;
 
 @property (weak, nonatomic) IBOutlet UILabel *noResultFoundLabel;
-
 @property (weak, nonatomic) IBOutlet UISearchBar *searchField;
 @property (weak, nonatomic) IBOutlet UICollectionView *photoCollectionView;
+
 @end
 

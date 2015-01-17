@@ -17,6 +17,7 @@ typedef void (^flickerImageFetchWevServiceFailureBlock)(NSError *error);
 /**
  *  Method to fetch image from flicker public image API
  *
+ *  @param  tags tags to be searched
  *  @param successBlock success call back block
  *  @param failureBlock failure call back block
  *  @param cachePolicy  request cache policy

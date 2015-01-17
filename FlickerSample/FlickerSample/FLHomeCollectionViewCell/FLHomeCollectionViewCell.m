@@ -7,7 +7,17 @@
 //
 
 #import "FLHomeCollectionViewCell.h"
+#import "Constants.h"
 
 @implementation FLHomeCollectionViewCell
 
+- (void) loadData:(FLImage *) image {
+	
+	[_imageView loadImage:image withPlaceholderImage:[UIImage imageNamed:PLACE_HOLDER_IMAGE]];
+}
+
+- (void) prepareForReuse {
+	
+	_imageView.image = [UIImage imageNamed:PLACE_HOLDER_IMAGE];
+}
 @end

@@ -9,12 +9,16 @@
 #import "FLHomeViewController.h"
 #import "SVProgressHUD.h"
 #import "FLImage.h"
+#import "FLUtility.h"
+
+#define RETRY_TEXT @"RETRY"
+#define NO_TEXT @"NO"
 
 @interface FLHomeViewController () {
 	NSString *searchText;
 }
 
-@property (nonatomic, strong) NSMutableArray *imageArray;
+@property (nonatomic, strong) NSMutableArray *imageArray; // Array of FLImage objs
 @end
 
 @implementation FLHomeViewController
@@ -22,17 +26,17 @@
 - (void)viewDidLoad {
 	
 	[super viewDidLoad];
+	
 	[self hideOrShowNoResultLabel];
 	[self configireSearchField];
-
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
+- (void) viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
 	[self loadImages];
-
 }
+
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	[self cancelAllImageDownLoads];
@@ -42,7 +46,6 @@
 - (void) dealloc {
 	
 	[self cancelAllImageDownLoads];
-	
 }
 
 #pragma mark - Collection view delegate  methods
@@ -58,14 +61,12 @@
 	FLHomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
 	FLImage *iConImage = [_imageArray objectAtIndex:indexPath.row];
 	if (!iConImage.image) {
-		
 		if (self.photoCollectionView.dragging == NO && self.photoCollectionView.decelerating == NO) {
-			[cell.imageView loadImage:iConImage withPlaceholderImage:[UIImage imageNamed:@"PageControlNoImage"]];
+			[cell loadData:iConImage];
 		}
 	} else {
 		cell.imageView.image = iConImage.image;
 	}
-
 	return cell;
 }
 
@@ -89,7 +90,7 @@
 - (void)startIconDownload:(FLImage *)iConImage forIndexPath:(NSIndexPath *)indexPath
 {
 	FLHomeCollectionViewCell *cell = (FLHomeCollectionViewCell *)[self.photoCollectionView cellForItemAtIndexPath:indexPath];
-	[cell.imageView loadImage:iConImage withPlaceholderImage:[UIImage imageNamed:@"PageControlNoImage"]];
+	[cell loadData:iConImage];
 }
 
 /**
@@ -144,7 +145,7 @@
 	[self loadImages];
 	[_searchField resignFirstResponder];
 	searchText = searchBar.text;
-
+	
 }
 
 - (void) searchBarCancelButtonClicked:(UISearchBar *)searchBar {
@@ -158,10 +159,12 @@
 	}
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-	NSLog(@"fdssd" );
-}
-#pragma Mark - Webservice call
+#pragma Mark - Webservice Methods
+
+/**
+ *  Methods loads images from Flickr
+ *  If there is any search text then load images based on search text else fetches all images
+ */
 - (void) loadImages {
 	
 	[SVProgressHUD show];
@@ -181,6 +184,18 @@
 	} andFailureBlock:^(NSError *error) {
 		[SVProgressHUD dismiss];
 		
+		UIAlertAction *reTryAction = [UIAlertAction actionWithTitle:NSLocalizedString(RETRY_TEXT, nil)
+														   style:UIAlertActionStyleDefault
+														 handler:^(UIAlertAction *action) {
+															 [self loadImages];
+														 }];
+		
+		UIAlertAction *noAction = [UIAlertAction actionWithTitle:NSLocalizedString(NO_TEXT, nil)
+														   style:UIAlertActionStyleCancel
+														 handler:nil];
+		
+		[FLUtility showAlertWithTitle:NSLocalizedString(DEFAULT_ERROR_ALERT_TITLE, nil) message:error.localizedDescription actions:[NSArray arrayWithObjects:reTryAction,noAction, nil] inViewController:self];
+		
 	} andCachePolicy:NSURLRequestReturnCacheDataElseLoad];
 }
 
@@ -197,7 +212,7 @@
 		_noResultFoundLabel.hidden = NO;
 	} else{
 		_noResultFoundLabel.hidden = YES;
-	
+		
 	}
 }
 
@@ -207,4 +222,6 @@
 		_searchField.showsCancelButton = YES;
 	}
 }
+
+
 @end

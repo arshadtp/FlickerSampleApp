@@ -7,9 +7,25 @@
 //
 
 #import "FLUtility.h"
-#import "Constants.h"
 
 @implementation FLUtility
+
+
++ (void)showAlertWithTitle:(NSString *)title
+				   message:(NSString *)message
+				   actions:(NSArray *)actions
+		  inViewController:(UIViewController *)controller {
+	
+	
+	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+																			 message:message
+																	  preferredStyle:UIAlertControllerStyleAlert];
+	for (UIAlertAction *action in actions) {
+		[alertController addAction:action];
+	}
+	[controller presentViewController:alertController animated:YES completion:nil];
+
+}
 
 + (NSString *) getJSONStringFromFlickerResponseString:(NSString *) responseString {
 	
@@ -29,5 +45,6 @@
 	
 	return [NSError errorWithDomain:@"Corrupted Data" code:333 userInfo:@{NSLocalizedDescriptionKey:@"Response data is not in correct format"}];
 }
+
 
 @end
