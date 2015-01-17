@@ -7,9 +7,6 @@
 //
 
 #import "FLHomeViewController.h"
-#import "SVProgressHUD.h"
-#import "FLImage.h"
-#import "FLUtility.h"
 
 #define RETRY_TEXT @"RETRY"
 #define NO_TEXT @"NO"

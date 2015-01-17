@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "FLHomeCollectionViewCell.h"
 #import "FLFlickerImageFetchApi.h"
+#import "SVProgressHUD.h"
+#import "FLUtility.h"
+
 
 @interface FLHomeViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
